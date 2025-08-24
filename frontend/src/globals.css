@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 208 34% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 188 40% 52%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 187 50% 82%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 190 48% 65%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 187 50% 82%;
+    --input: 187 50% 95%;
+    --ring: 208 34% 53%;
+    --radius: 0.5rem;
+
+    /* Brand color system - Light mode - Exact user colors */
+    --brand-primary: 208 34% 53%;        /* #5585b5 - Primary blue (first-color) */
+    --brand-primary-hover: 208 42% 48%;   /* Darker for hover */
+    --brand-primary-active: 208 47% 43%;  /* Darker for active */
+    --brand-primary-foreground: 0 0% 98%; /* White text */
+    
+    --brand-secondary: 188 40% 52%;       /* #53a8b6 - Teal (second-color) */
+    --brand-secondary-hover: 188 45% 47%; /* Darker for hover */
+    --brand-secondary-active: 188 50% 42%; /* Darker for active */
+    --brand-secondary-foreground: 0 0% 98%; /* White text */
+    
+    --brand-accent: 190 48% 65%;          /* #79c2d0 - Light teal (third-color) */
+    --brand-accent-hover: 190 48% 60%;    /* Darker for hover */
+    --brand-accent-active: 190 48% 55%;   /* Darker for active */
+    --brand-accent-foreground: 222.2 84% 4.9%; /* Dark text */
+    
+    --brand-surface: 187 50% 82%;         /* #bbe4e9 - Very light teal (fourth-color) */
+    --brand-surface-hover: 187 50% 77%;   /* Slightly darker for hover */
+    --brand-surface-active: 187 50% 72%;  /* Darker for active */
+    --brand-surface-foreground: 222.2 84% 4.9%; /* Dark text */
+
+    /* Todo priority colors - harmonized with brand palette */
+    --todo-urgent: 0 84% 60%;             /* Red for urgent */
+    --todo-high: 25 95% 53%;              /* Orange for high */
+    --todo-medium: 208 34% 53%;           /* Brand primary for medium */
+    --todo-low: 188 51% 65%;              /* Brand accent for low */
+    --todo-done: 142 69% 58%;             /* Green for completed */
+
+    /* Semantic colors - brand harmonized */
+    --semantic-success: 142 69% 58%;      /* Green */
+    --semantic-success-foreground: 0 0% 98%;
+    --semantic-warning: 43 96% 56%;       /* Yellow-orange */
+    --semantic-warning-foreground: 222.2 84% 4.9%;
+    --semantic-error: 0 84% 60%;          /* Red */
+    --semantic-error-foreground: 0 0% 98%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 208 42% 63%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 188 45% 62%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 190 48% 75%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 208 42% 63%;
+
+    /* Brand color system - Dark mode (lighter variants for better contrast) */
+    --brand-primary: 208 42% 63%;        /* Lighter primary blue for dark mode */
+    --brand-primary-hover: 208 42% 68%;   /* Lighter for hover */
+    --brand-primary-active: 208 42% 73%;  /* Lighter for active */
+    --brand-primary-foreground: 222.2 84% 4.9%; /* Dark text */
+    
+    --brand-secondary: 188 45% 62%;       /* Lighter teal for dark mode */
+    --brand-secondary-hover: 188 45% 67%; /* Lighter for hover */
+    --brand-secondary-active: 188 45% 72%; /* Lighter for active */
+    --brand-secondary-foreground: 222.2 84% 4.9%; /* Dark text */
+    
+    --brand-accent: 190 48% 75%;          /* Lighter accent teal for dark mode */
+    --brand-accent-hover: 190 48% 80%;    /* Lighter for hover */
+    --brand-accent-active: 190 48% 85%;   /* Lighter for active */
+    --brand-accent-foreground: 222.2 84% 4.9%; /* Dark text */
+    
+    --brand-surface: 187 25% 20%;         /* Dark surface with brand hue */
+    --brand-surface-hover: 187 25% 25%;   /* Lighter for hover */
+    --brand-surface-active: 187 25% 30%;  /* Lighter for active */
+    --brand-surface-foreground: 210 40% 98%; /* Light text */
+
+    /* Todo priority colors - dark mode variants */
+    --todo-urgent: 0 84% 70%;             /* Lighter red for dark mode */
+    --todo-high: 25 95% 63%;              /* Lighter orange for dark mode */
+    --todo-medium: 208 34% 63%;           /* Brand primary for medium */
+    --todo-low: 188 51% 75%;              /* Brand accent for low */
+    --todo-done: 142 69% 68%;             /* Lighter green for completed */
+
+    /* Semantic colors - dark mode variants */
+    --semantic-success: 142 69% 68%;      /* Lighter green */
+    --semantic-success-foreground: 222.2 84% 4.9%;
+    --semantic-warning: 43 96% 66%;       /* Lighter yellow-orange */
+    --semantic-warning-foreground: 222.2 84% 4.9%;
+    --semantic-error: 0 84% 70%;          /* Lighter red */
+    --semantic-error-foreground: 222.2 84% 4.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Brand-aware component utility classes */
+@layer components {
+  /* Priority-based color classes using brand palette */
+  .priority-1 { @apply border-l-semantic-success; }
+  .priority-2 { @apply border-l-brand-accent; }
+  .priority-3 { @apply border-l-brand-primary; }
+  .priority-4 { @apply border-l-todo-high; }
+  .priority-5 { @apply border-l-todo-urgent; }
+
+  /* Status-based color classes using brand palette */
+  .status-todo { @apply border-l-brand-primary; }
+  .status-doing { @apply border-l-brand-secondary; }
+  .status-done { @apply border-l-brand-accent opacity-80; }
+
+  /* Brand-consistent card styles */
+  .todo-card {
+    @apply bg-card rounded-xl p-6 shadow-sm border border-border 
+           transition-all duration-300 hover:shadow-md hover:-translate-y-1
+           border-l-4 border-l-transparent;
+  }
+
+  .todo-card-urgent {
+    @apply todo-card border-l-todo-urgent shadow-lg shadow-todo-urgent/20;
+  }
+
+  .todo-card-high {
+    @apply todo-card border-l-todo-high shadow-md shadow-todo-high/10;
+  }
+
+  .todo-card-medium {
+    @apply todo-card border-l-brand-primary shadow-sm shadow-brand-primary/5;
+  }
+
+  .todo-card-low {
+    @apply todo-card border-l-brand-accent;
+  }
+
+  .todo-card-done {
+    @apply todo-card border-l-semantic-success opacity-80;
+  }
+
+  /* Brand-consistent button variants */
+  .btn-brand-primary {
+    @apply bg-brand-primary hover:bg-brand-primary-hover active:bg-brand-primary-active 
+           text-brand-primary-foreground transition-colors;
+  }
+
+  .btn-brand-secondary {
+    @apply bg-brand-secondary hover:bg-brand-secondary-hover active:bg-brand-secondary-active 
+           text-brand-secondary-foreground transition-colors;
+  }
+
+  .btn-brand-accent {
+    @apply bg-brand-accent hover:bg-brand-accent-hover active:bg-brand-accent-active 
+           text-brand-accent-foreground transition-colors;
+  }
+
+  /* AI Assistant brand-consistent styles */
+  .ai-gradient {
+    @apply bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent;
+  }
+
+  .ai-card {
+    @apply bg-brand-surface/50 backdrop-blur-md border border-brand-surface 
+           text-brand-surface-foreground rounded-xl;
+  }
+
+  .glass-effect {
+    @apply bg-background/95 backdrop-blur-md border border-border/20;
+  }
+
+  /* Semantic color utilities */
+  .text-success { @apply text-semantic-success; }
+  .text-warning { @apply text-semantic-warning; }
+  .text-error { @apply text-semantic-error; }
+  .text-info { @apply text-semantic-info; }
+
+  .bg-success { @apply bg-semantic-success text-semantic-success-foreground; }
+  .bg-warning { @apply bg-semantic-warning text-semantic-warning-foreground; }
+  .bg-error { @apply bg-semantic-error text-semantic-error-foreground; }
+  .bg-info { @apply bg-semantic-info text-semantic-info-foreground; }
+
+}
+
+/* 스크롤바 스타일링 */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(148 163 184) rgb(241 245 249);
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgb(241 245 249);
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgb(148 163 184);
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgb(100 116 139);
+  }
+}

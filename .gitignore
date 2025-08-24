@@ -1,0 +1,484 @@
+# =============================================================================
+# AI 기반 할 일 관리 앱 - Git 무시 패턴 설정
+# =============================================================================
+# 생성일: 2024년
+# 프로젝트: 마이크로서비스 기반 React + FastAPI + LangGraph
+# 구조: frontend/ + services/todo/ + services/ai/ + nginx/
+
+# =============================================================================
+# 1. 환경변수 및 보안 설정
+# =============================================================================
+.env*
+!.env.example
+!.env.template
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# API 키 및 시크릿 파일
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.json
+config.json
+credentials.json
+.secrets/
+.env.vault
+
+# Docker secrets
+docker-compose.override.yml
+docker-compose.production.yml
+docker-compose.local.yml
+.docker/
+
+# =============================================================================
+# 2. Python 백엔드 (FastAPI + LangGraph)
+# =============================================================================
+# Python 캐시 및 컴파일된 파일
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 배포 및 빌드 파일
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 가상 환경 (Python)
+.Python
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pyenv
+
+# Python 패키지 관리 (uv, pip, poetry, rye, pdm)
+.uv/
+poetry.lock
+Pipfile.lock
+pip-log.txt
+pip-delete-this-directory.txt
+.rye/
+.pdm-python
+__pypackages__/
+.pdm.toml
+
+# 테스트 및 커버리지
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# PyCharm
+.idea/
+*.swp
+*.swo
+
+# =============================================================================
+# 3. React 프론트엔드 (TypeScript)
+# =============================================================================
+# 의존성 패키지
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# React 빌드 출력
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+build/
+dist/
+
+# Vite 관련
+.vite/
+vite.config.*.timestamp-*
+
+# 런타임 데이터
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 커버리지 디렉토리
+coverage/
+*.lcov
+
+# nyc 테스트 커버리지
+.nyc_output
+
+# TypeScript 빌드 정보
+*.tsbuildinfo
+
+# 선택적 npm 캐시 디렉토리
+.npm
+
+# 선택적 eslint 캐시
+.eslintcache
+
+# 선택적 REPL 히스토리
+.node_repl_history
+
+# npm pack 출력
+*.tgz
+
+# Yarn 무결성 파일
+.yarn-integrity
+
+# Parcel 번들러 캐시
+.cache
+.parcel-cache
+
+# Next.js 빌드 출력
+.next
+
+# Nuxt.js 빌드/생성 출력
+.nuxt
+
+# Gatsby 파일
+.cache/
+public
+
+# Storybook 빌드 출력
+.out
+.storybook-out
+
+# 웹팩 번들 분석기
+webpack-bundle-analyzer-report.html
+
+# =============================================================================
+# 4. Docker 및 컨테이너 관련
+# =============================================================================
+# Docker 빌드 컨텍스트에서 제외할 파일
+.dockerignore
+
+# Docker Compose 로그
+docker-compose.logs
+
+# Container 데이터 볼륨
+data/
+logs/
+postgres-data/
+redis-data/
+
+# =============================================================================
+# 5. 데이터베이스 및 캐시
+# =============================================================================
+# SQLite 데이터베이스
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL 덤프
+*.sql.gz
+*.dump
+
+# Redis 덤프
+dump.rdb
+
+# 데이터베이스 마이그레이션 임시 파일
+migrations/versions/*_temp.py
+
+# =============================================================================
+# 6. 로그 및 임시 파일
+# =============================================================================
+# 로그 파일
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# 런타임 데이터
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 임시 폴더
+tmp/
+temp/
+.tmp/
+
+# 스왑 파일
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# 7. IDE 및 에디터 설정
+# =============================================================================
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/settings.json
+.history/
+
+# JetBrains IDEs (WebStorm, PyCharm, IntelliJ 등)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Nano
+*.save
+
+# =============================================================================
+# 8. 운영체제 생성 파일
+# =============================================================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# =============================================================================
+# 9. AI 및 머신러닝 관련
+# =============================================================================
+# 모델 파일 (대용량)
+*.model
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.onnx
+*.pb
+
+# 데이터셋 (프로젝트별 조정 필요)
+# data/
+# datasets/
+# *.csv
+# *.json (주의: 설정 파일과 구분 필요)
+
+# LangGraph 캐시
+.langchain/
+.langsmith/
+
+# OpenAI 설정 캐시
+.openai/
+
+# Anthropic Claude 캐시
+.claude/
+.anthropic/
+
+# Hugging Face 캐시
+.cache/huggingface/
+.cache/transformers/
+
+# Other AI 캐시
+.chroma/
+.vectordb/
+.embeddings/
+
+# =============================================================================
+# 10. 성능 및 모니터링
+# =============================================================================
+# 프로파일링 결과
+*.prof
+*.pstats
+
+# 성능 모니터링 로그
+perf.data
+flamegraph.svg
+
+# 메모리 덤프
+*.hprof
+heapdump.*
+
+# =============================================================================
+# 11. 백업 및 버전 관리
+# =============================================================================
+# 백업 파일
+*.bak
+*.backup
+*.old
+*.orig
+
+# 임시 저장 파일
+*.tmp
+*.temp
+
+# 아카이브
+*.tar
+*.tar.gz
+*.tar.xz
+*.zip
+*.7z
+
+# =============================================================================
+# 12. 보안 강화 패턴
+# =============================================================================
+# 인증서 및 키 파일
+*.crt
+*.csr
+*.cer
+*.der
+*.key
+*.keystore
+*.jks
+*.p12
+*.pem
+
+# SSH 키
+id_rsa
+id_ed25519
+known_hosts
+
+# GPG 키
+*.gpg
+*.asc
+
+# 설정 파일 내 민감 정보
+*secret*
+*credential*
+*password*
+*token*
+
+# =============================================================================
+# 13. 프로젝트별 특화 패턴
+# =============================================================================
+# TODO 앱 테스트 데이터
+test-todos.json
+sample-data.json
+
+# AI 모델 실험 결과
+experiments/
+model-outputs/
+
+# 사용자 업로드 파일 (해당되는 경우)
+uploads/
+attachments/
+
+# 리포트 및 문서 생성물
+reports/
+docs/build/
+
+# 성능 테스트 결과
+benchmark-results/
+load-test-results/
+
+# Modern development tools
+.turbo/
+.swc/
+.wrangler/
+.astro/
+.sveltekit/
+
+# Package managers
+pnpm-lock.yaml
+bun.lockb
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# =============================================================================
+# 14. 네트워크 및 프록시
+# =============================================================================
+# SSL 인증서
+*.pem
+*.crt
+*.key
+
+# 프록시 설정
+proxy.conf
+
+# =============================================================================
+# ! 중요: 버전 관리에 포함해야 할 파일들 (예외 처리)
+# =============================================================================
+# !.vscode/settings.json  # 팀 공유 VS Code 설정 (필요시)
+# !docker-compose.example.yml  # 예제 Docker Compose 파일 (필요시)
